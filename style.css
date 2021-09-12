@@ -11,6 +11,7 @@
     --dark-grey: #707070;
     --mediumlight-grey: #95989A;
     --ligth-grey: #A5A5A5;
+    --very-light-color: #F7F7F7;
     --primary-font-color: #000000;
     /*Fonts of project*/
     --open-sans: 'Open Sans', sans-serif;
@@ -48,23 +49,21 @@ body {
 .navigation {
     width: 100%;
     height: 100%;
-    /* box-shadow: 0px 3px 6px  var(--ligth-grey); */
     box-shadow: 0px 3px 6px #00000029;
     z-index: 2;
-
+    justify-content: space-around;
+    align-items: center;
 }
 
 .container {
     max-width: var(--max-width);
     background-color: var(--color-background);
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    width: 100%;
 }
 
 .navigation_list {
     display: flex; 
-    height: 100%;
 }
 
 .navigation_list_element {
@@ -97,20 +96,22 @@ body {
 .section_welcome {
     height: calc(100vh - 70px);
 }
+
 .section_welcome_container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    height: calc(100vh -70px);
+    position: relative;
 }
 
 .section_welcome_box {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: center;
-    /* align-content: space-between; */
+    justify-content: space-around;
     width: 100%;
-    height: 50%;
+    height: 40%;
+    /* margin-bottom: 15vh; */
 }
 .section_welcome_main_text {
     /* font-size: 49px; */
@@ -123,8 +124,6 @@ body {
     font-family: var(--open-sans);
     text-align: center;
     padding: 20px 0;
-    /* padding-right: 10px; */
-
 }
 
 .section_welcome_button {
@@ -147,14 +146,139 @@ body {
     background-size: cover;
     background-position: center;
     max-width: var(--max-width);
-    padding: 15px 0px;
-    height: 50%;
+    padding: 0px 15px;
+    height: 50vh;
     width: 100vw;
     position: absolute;
-    left: 0;
     bottom:0;
 }
 
+
+/* Section why_us */
+.section_why_us {
+    height: 50%;
+    /* border: 3px solid black; */
+}
+
+.section_why_us_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 50px 0px;
+    /* border: 3px solid red; */
+}
+.section_why_us_main_text {
+    font-size: 2rem;
+    font-family: var(--open-sans);
+    font-weight: 300;
+    text-align: center;
+    padding: 0 15px;
+}
+
+
+.why_us_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-raleway);
+    position: relative;
+}
+.circle {
+    border-radius: 50%;
+}
+
+.why_us_circle1 {
+    background-color: var(--red-background);
+
+}
+.why_us_circle2 {
+    background-color: var(--blue-background);
+}
+.why_us_circle3 {
+    background-color: var(--green-background);
+}
+
+.why_use_box_number {
+    color: var(--primary-font-color);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.why_use_box_text {
+    text-align: center;
+    color: var(--ligth-grey);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+/* Section benefits */
+.sezon_benefits {
+    align-content: space-between;
+    justify-content: center;
+}
+
+.section_benefits_container {
+    width: 100%;
+    background-color: var(--very-light-color);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.benefits_box {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-background);
+    height: 20vh;
+    width: 50vh;
+    margin: 10px;
+    position: relative;
+    border: 1px solid red;
+}
+
+.benefits_article {
+    font-size: 1rem;
+    font-family: var(--open-sans);
+
+}
+
+.benefits_image1 {
+    background-image: url(./assets/Macbook.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 500px
+}
+
+.benefits_image2 {
+    background-image: url(./assets/iPhone.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 500px
+}
+
+.benefits_image3 {
+    background-image: url(./assets/Trumpet.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.benefits_box_image {
+    position: relative;
+
+}
 
 
 /*Style of max-width: 575.98px*/
@@ -175,7 +299,7 @@ body {
     }
 
     .navigation_list {
-        height:100%;
+        /* height:100%; */
         position: absolute;
         top: 30px;
         left: 0;
@@ -184,7 +308,6 @@ body {
         margin-bottom: 35px;
         flex-direction: column;
         background-color: var(--color-background);
-        /* align-items: center; */
         box-shadow: 0px 3px 6px  var(--ligth-grey);
         padding: 30px 0px 30px 0px;
         transform: translateY(-160%);
@@ -263,7 +386,72 @@ body {
         font-size: 12px;
     }
     .section_welcome_button {
-        padding: 15px 60px
+        padding: 15px 60px;
+    }
+
+    /*.section_why_us*/
+    .section_why_us_container{
+        display: flex;
+        flex-direction: column;
+    }
+    .section_why_us_main_text {
+        font-size: 1.5rem;
+        font-family: var(--open-sans);
+        font-weight: 300;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .section_why_us_box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .why_us_box {
+        height: 30%;
+        width: 100%;
+        /* border: 3px solid brown; */
+        padding: 5px 0px;
+    }
+    .circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .why_us_box_image1 {
+        background-image: url(./assets/Person.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right:  43%;
+        top: 10%;
+    }
+    .why_us_box_image2 {
+        background-image: url(./assets/Eye.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right:  43%;
+        top: 10%;
+
+    }
+    .why_us_box_image3 {
+        background-image: url(./assets/Catalog.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right:  43%;
+        top: 10%;
     }
 }
 
@@ -312,6 +500,59 @@ body {
     .section_welcome_button {
         padding: 10px 60px;
     }
+    .section_why_us_box {
+        flex-direction: row;
+    }
+
+    .section_why_us_box {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .why_us_box {
+        /* border: 3px solid green; */
+        width: 33%;
+        padding: 30px;
+        margin: 40px 0;
+    }
+    .circle {
+        width: 50px;
+        height: 50px;
+    }
+    .why_us_box_image1 {
+        background-image: url(./assets/Person.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right:  30%;
+        top: 27%;
+    }
+    .why_us_box_image2 {
+        background-image: url(./assets/Eye.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right:  30%;
+        top: 23%;
+    }
+    .why_us_box_image3 {
+        background-image: url(./assets/Catalog.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right:  30%;
+        top: 27%;
+    }
+
 }
 
 
@@ -350,4 +591,76 @@ body {
     .section_welcome_button {
         padding: 10px 60px
     }
+
+    
+    /* Section why_us */
+    /* .section_why_us {
+        height: 50vh;
+    } */
+
+    .section_why_us_container {
+        display: flex;
+        justify-content: center;
+    }
+    .section_why_us_main_text {
+        font-size: 2rem;
+        font-family: var(--open-sans);
+        font-weight: 300;
+        text-align: center;
+        padding: 0 30px;
+    }
+
+    .section_why_us_box {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .why_us_box {
+        /* border: 3px solid green; */
+        width: 33%;
+        padding: 30px;
+        margin: 40px 0;
+    }
+    .circle {
+        width: 50px;
+        height: 50px;
+    }
+    .why_us_box_image1 {
+        background-image: url(./assets/Person.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right:  40%;
+        top: 25%;
+    }
+    .why_us_box_image2 {
+        background-image: url(./assets/Eye.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right:  40%;
+        top: 25%;
+    }
+    .why_us_box_image3 {
+        background-image: url(./assets/Catalog.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right:  40%;
+        top: 25%;
+    }
+    /* Section benefits */
+    .benefits_article {
+        font-size: 2rem;
+    }
+
 }
