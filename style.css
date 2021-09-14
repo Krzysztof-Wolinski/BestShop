@@ -20,6 +20,10 @@
     --max-width: max-width: 1352px;
 
 }
+
+html {
+scroll-behavior: smooth;
+}
 body {
     overflow-x: hidden;
   }
@@ -228,16 +232,7 @@ body {
     align-content: space-around;
 }
 
-.benefits_box {
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--color-background);
-    height: 20vh;
-    width: 50vh;
-    margin: 10px;
-    position: relative;
-    border: 1px solid red;
-}
+
 
 .benefits_article {
     font-size: 1rem;
@@ -250,8 +245,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 500px;
-    width: 500px
+    height: 450px;
+    width: 450px
 }
 
 .benefits_image2 {
@@ -259,8 +254,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 500px;
-    width: 500px
+    height: 450px;
+    width: 450px
 }
 
 .benefits_image3 {
@@ -268,16 +263,17 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 500px;
-    width: 500px;
+    height: 450px;
+    width: 450px;
     position: absolute;
     top:0;
     right: 0;
 }
-
+.benefits_box{
+    display: flex;
+}
 .benefits_box_image {
     position: relative;
-
 }
 
 
@@ -452,6 +448,18 @@ body {
         position: absolute;
         right:  43%;
         top: 10%;
+    }
+    .benefits_image1 {
+        position: absolute
+    }
+    .benefits_image2 {
+        position: absolute
+    }
+    .benefits_image3 {
+        position: absolute
+    }
+    .benefits_box_image {
+        position: relative;
     }
 }
 
@@ -661,6 +669,28 @@ body {
     /* Section benefits */
     .benefits_article {
         font-size: 2rem;
+    }
+
+    .benefits_box {
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--color-background);
+        height: 20vh;
+        width: 50vh;
+        margin: 10px;
+        padding: 30px;
+        /* position: relative; */
+        /* border: 1px solid red; */
+    }
+
+    .benefits_article {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+    }
+    .benefits_image3 {
+        position: absolute;
+        top: 0;
     }
 
 }
