@@ -22,14 +22,14 @@
 }
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 body {
     overflow-x: hidden;
-  }
+}
 
 /*Style of header*/
-.header {
+.l-section-header {
     /* width: 100vw; */
     display: flex;
     justify-content: center;
@@ -37,20 +37,20 @@ body {
     height: 70px;
     z-index: 1;
 }
-.section_size {
+.h-section--size{
     width: 100vw;
     display: flex;
     justify-content: center;
 }
 
-.logo {
+.c-logo {
     font-size: 2rem;
     color: var(--blue-background);
     font-family:var(--font-raleway);
     font-weight: 300;
     text-decoration: none;
 }
-.navigation {
+.c-navigation {
     width: 100%;
     height: 100%;
     box-shadow: 0px 3px 6px #00000029;
@@ -59,23 +59,23 @@ body {
     align-items: center;
 }
 
-.container {
+.h-container {
     max-width: var(--max-width);
     background-color: var(--color-background);
     display: flex;
     width: 100%;
 }
 
-.navigation_list {
+.c-navigation__list {
     display: flex; 
 }
 
-.navigation_list_element {
+.c-navigation__item {
     list-style-type: none;
     height: 100%;
 }
 
-.navigation_list_link {
+.c-navigation__link {
     display: block;
     height: 100%;
     text-decoration: none;
@@ -86,14 +86,13 @@ body {
     margin: 0px 10px;
 }
 
-.navigation_list_link:hover {
+.c-navigation__link:hover {
     color: var(--primary-font-color);
 }
 
-.navigation_burger{
+.c-navigation__burger{
     display: none;
 }
-
 
 
 /* section welcome*/
@@ -341,7 +340,7 @@ body {
 
 /*Style of max-width: 575.98px*/
 @media screen and (max-width: 575.98px) {
-    .header{
+    .l-section-header {
         width: 100vw;
         justify-content: center;
         align-items: center;
@@ -356,7 +355,7 @@ body {
 
     }
 
-    .navigation_list {
+    .c-navigation-item__list {
         /* height:100%; */
         position: absolute;
         top: 30px;
@@ -380,7 +379,7 @@ body {
         display: block;
     }
 
-    .navigation_list_element {
+    .c-navigation__item {
         height:100%;
         margin-bottom: 14px;
         margin-left: 60px;
@@ -392,12 +391,12 @@ body {
         transform: translateX(0%);
     }
 
-    .navigation_burger {
+    .c-navigation__burger {
         display: block;
         cursor: pointer;
     }
 
-    .navigation_burger_line {
+    .c-navigation__burger_line {
         width: 30px;
         height: 3px;
         background-color: var(--blue-background);
@@ -406,10 +405,10 @@ body {
         transition: all 0.2s ease;
     }
 
-    /* .navigation_list_element {
+    /* .c-navigation__item {
 
     } */
-    .navigation_list_link {
+    .c-navigation__link {
         margin: 5px;
 
         /* text-decoration: none;
@@ -427,13 +426,13 @@ body {
         }
       }
       
-      .toggle .navigation_burger_line1 {
+      .toggle .c-navigation__burger_line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
       }
-      .toggle .navigation_burger_line2 {
+      .toggle .c-navigation__burger_line2 {
         opacity: 0;
       }
-      .toggle .navigation_burger_line3 {
+      .toggle .c-navigation__burger_line3 {
         transform: rotate(45deg) translate(-5px, -6px);
       }
       /*section welcome style*/
@@ -571,24 +570,24 @@ body {
 
 /*Style of  max-width: 767.98px*/
 @media screen and (min-width: 576px)  and (max-width: 767.98px){
-    .header{
+    .l-section-header{
         background-color: yellowgreen
     }
     .container {
         height: 100%;
         width: 1354px;
     }
-    .navigation_list {
+    .navigation-list {
         align-items: center;
         height: 100%;
     }
 
-    .navigation_list_link {
+    .c-navigation__link {
         text-align: center;
         height: 100%;
         align-items: center;
     }
-    .navigation_list_link:hover {
+    .c-navigation__link:hover {
         text-align: center;
         /* border: 1px solid red; */
         height: 100%;
@@ -688,11 +687,11 @@ body {
     /* .navigation_list {
         display: flex; 
     } */
-    .navigation_list_element {
+    .c-navigation__item {
         list-style-type: none;
     }
 
-    .navigation_list_link {
+    .c-navigation__link {
         text-decoration: none;
     }
 
