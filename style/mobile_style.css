@@ -21,7 +21,7 @@ html {
     --open-sans: 'Open Sans', sans-serif;
     --font-raleway: 'Raleway', sans-serif;
     /* Size*/
-    --max-width: max-width: 1352px;    
+    --max-width: 1352px;    
     scroll-behavior: smooth;
 }
 body {
@@ -58,6 +58,15 @@ c- prefix separate class component,
     border-radius: 50%;
 }
 
+.h-red-font {
+    color: var(--red-background);
+}
+.h-blue-font {
+    color: var(--blue-background);
+}
+.h-green-font {
+    color: var(--green-background);
+}
 
 /* header section*/
 .l-section-header {
@@ -69,8 +78,6 @@ c- prefix separate class component,
 /*Burger menu*/
 .c-navigation__burger {
     display: block;
-    /* width: 30px;
-    height: 30px; */
     cursor: pointer;
 }
 .c-navigation__burger__line {
@@ -100,6 +107,7 @@ c- prefix separate class component,
     width: 100%;
     max-height: 200px;
     padding: 2rem 0;
+    box-shadow: 5px 10px 14px #00000029;
 }
 
 .c-navigation__item {
@@ -150,6 +158,7 @@ c- prefix separate class component,
 }
 
 .c-btn {
+    cursor: pointer;
     border-radius: calc(10rem/2);
     width: 15rem;
     height: 3rem;
@@ -193,8 +202,14 @@ c- prefix separate class component,
 }
 
 .c-why-us__block {
+    height: 100%;
     width: 100%;
+    min-height: 18rem;
     font-family: var(--font-raleway);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around ;
+    align-items: center;
 }
 
 .c-why-us__box {
@@ -202,7 +217,8 @@ c- prefix separate class component,
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding: 10px
+    padding: 10px;
+    min-width: 360px;
 }
 
 
@@ -326,15 +342,6 @@ c- prefix separate class component,
 }
 
 
-
-
-/* .c-benefits__box--first {
-
-}
-.c-benefits__article--first {
-
-} */
-
 .c-benefits__image__first {
     background-image: url(../assets/Macbook.png);
     background-position: center center;
@@ -357,12 +364,6 @@ c- prefix separate class component,
     transform: rotate(45deg);
 }
 
-
-
-
-/* .c-benefits__box--second {
-
-} */
 .c-benefits__image__second {
     background-image: url(../assets/iPhone.png);
     background-position: center center;
@@ -447,6 +448,7 @@ c- prefix separate class component,
     border: 1px solid var(--green-background)
 }
 .c-price__btn {
+    cursor: pointer;
     text-align: center;
     width: 10rem;
     height: 3rem;
@@ -473,15 +475,332 @@ c- prefix separate class component,
     background-color: var(--green-background);
 }
 
-
-
-.c-price__item-list {
-    width:100%;
-    /* text-align: left; */
+.c-price__box__offer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--open-sans);
+}
+.c-price__name-offer {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: var(--font-raleway);
+}
+.c-price__number {
+    font-size: 2.9rem;
+}
+.c-price__second-text {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-family: var(--font-raleway);
 }
 
-.c-price__item {
+.c-price__item-list {
+    width: 100%;
+}
+
+.price__item {
     list-style-type: none;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-family: var(--open-sans);
+    font-weight: bold;
+    display: flex;
 }
 
 /*Fonts awesome*/
+.fa-check-square {
+    font-size: 1rem;
+    padding-right: 0.25rem;
+    color: var(--green-background);
+}
+/*Fonts awesome end*/
+
+.price__icon {
+    background-image: url(../assets/Close.svg);
+    background-position: center;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: 0.25rem;
+}
+
+
+
+
+
+
+
+
+
+/*  Section contact*/
+
+.c-container__contact {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-content: space-around;
+    /* align-items: center; */
+    padding: 1rem;
+}
+
+.c-contact__box {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    color:var(--primary-font-color);
+    padding: 1rem;
+    min-width: 360px;
+    max-width: 440px;
+    /* min-width: 600px; */
+    /* background-color: var(--red-background); */
+}
+
+.c-contact__main-text {
+    font-family: var(--font-raleway);
+    font-size: 2.5rem;
+    font-weight: normal;
+    padding-bottom: 2rem;
+}
+.c-contact__second-text {
+    font-family: var(--open-sans);
+    font-size: 1rem;
+    font-weight: normal;
+    padding-bottom: 2rem;
+}
+
+.c-contact__details__box {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-contact__details {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+.c-icon-email {
+    background-image: url(../assets/Mail\ Icon.svg);
+    background-position: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.5rem;
+}
+
+.c-contact__email-text {
+    color: var(--ligth-grey);
+    font-size: 1rem;
+    font-family: var(--open-sans);
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.c-icon-phone {
+    background-image: url(../assets/Phone\ Icon.svg);
+    background-position: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.5rem;
+}
+
+.c-contact__email-number {
+    color: var(--ligth-grey);
+    font-size: 1rem;
+    font-family: var(--open-sans);
+    font-weight: 600;
+}
+
+.c-contact__form__box{
+    display: flex;
+    justify-items: center;
+    min-width: 360px;
+    max-width: 440px;
+    /* min-width: 600px; */
+    /* background-color: var(--green-background); */
+}
+
+.c-contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    padding: 1rem;
+}
+
+.c-form__text__box {
+    font-size: 1rem;
+    font-family: var(--open-sans);
+    font-weight: bold;
+}
+
+.c-form__name {
+    height: 2.5rem;
+    width: 100%;
+    display: block;
+    border:none;
+    position: relative;
+    border-bottom: 2px solid var(--very-light-grey);
+    outline: none;
+    margin-bottom: 1rem;
+}
+.c-form__name:hover {
+    /* background-color: lightblue; */
+    /* border-bottom: 3px solid var(--blue-background); */
+
+}
+
+.c-form__name:focus {
+    background-color: rgb(240, 252, 255);
+}
+/* .c-form__name::after {
+    content: "Hellow;";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: lightblue;
+    border-bottom: 1px solid var(--mediumlight-grey);
+} */
+.c-form__email {
+    height: 2.5rem;
+    width: 100%;
+    display: block;
+    border:none;
+    position: relative;
+    border-bottom: 2px solid var(--very-light-grey);
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.c-form__email:hover {
+    /* background-color: lightblue; */
+}
+.c-form__email:focus {
+    background-color: rgb(240, 252, 255);
+}
+
+
+.c-form__checkbox{
+    display: inline-block;
+}
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+
+    background-color: var(--color-background);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 4px;
+    border: 2px solid var(--mediumlight-grey);
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+
+input[type="checkbox"]:hover {
+    background-color: var(--ligth-grey);
+}
+
+input[type="checkbox"]::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    font-weight: 700;
+    font-size: 1rem;
+    position: absolute;
+    top: 3px;
+    left:2.5px;
+    display: none;
+    padding: auto 0;
+    color: var(--blue-background);
+}
+
+input[type="checbox"]:checked {
+    color: var(--blue-background);
+    background-color: var(--color-background);
+    display: none;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+
+.c-contact__text {
+    font-size: 0.75rem;
+    color: var(--dark-grey);
+    font-family: var(--open-sans);
+    padding-bottom: 1rem;
+    /* display: inline-block; */
+}
+
+
+
+
+
+
+ 
+/* contact button send */
+/* .c-btn--send {
+    border: none;
+    box-shadow: 5px 10px 14px #07ACE629;
+    width: 14rem;
+    height: 3.5rem;
+} */
+
+.c-footer__container {
+    display: flex;
+    justify-content: space-between;
+
+    box-shadow: 0px -5px 40px #00000029;
+
+}
+
+.c-footer__box {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.h-logo--size {
+    font-size: 1.5rem;
+}
+.c-footer__copyright {
+    color: var(--ligth-grey);
+    font-size: 0.7rem;
+}
+
+.c-footer__social-media_box {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.c-footer__icon__facebook{
+    background-image: url(../assets/Facebook.svg);
+    background-position: center;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem;
+}
+
+.c-footer__icon__twitter {
+    background-image: url(../assets/Twitter.svg);
+    background-position: center;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem;
+}

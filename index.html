@@ -17,9 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- <link href="./css/all.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./css/all.min.css" >
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
     <!-- <link href="./style/basic_style.css" rel="stylesheet" /> -->
-    <link href="./style/mobile_style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/mobile_style.css"/>
     <!-- <link href="./style/tablet_style.css" rel="stylesheet" />
     <link href="./style/desktop_style.css" rel="stylesheet" /> -->
 
@@ -164,50 +165,53 @@
         <h3 class="c-price__main-text">Pricing</h3>
         <div class="c-price__block">
           <div class="c-price__box c-price__box--basic">
-            <div class="">
-              <p class="c-price__basic-text">Basic</p>
-              <p class="c-price__number">$0</p>
+            <div class="c-price__box__offer">
+              <p class="c-price__name-offer">Basic</p>
+              <p class="c-price__number h-red-font">$0</p>
             </div>
+            <div class="">
               <ul class="c-price__item-list">
-                <li class="c-price__item">100 MB HDD</li>
-                <li class="c-price__item">1 Subdomain</li>
-                <li class="c-price__item">2 E-mails</li>
-                <li class="c-price__item">Two years license</li>
-                <li class="c-price__item">Full support</li>
+                <li class="price__item"><i class="far fa-check-square"></i>100 MB HDD</li>
+                <li class="price__item"><i class="far fa-check-square"></i>1 Subdomain</li>
+                <li class="price__item"><i class="far fa-check-square"></i>2 E-mails</li>
+                <li class="price__item"><div class="price__icon"></div>Two years license</li>
+                <li class="price__item"><div class="price__icon"></div>Full support</li>
               </ul>
             <button class="c-price__btn c-price__btn--basic">Begin</button>
+            </div>
           </div>
 
           <div class="c-price__box c-price__box--professional">
-            <div class="">
-              <p class="c-price__basic-text">Professional</p>
-              <p class="c-price__number">$25</p>
+            <div class="c-price__box__offer">
+              <p class="c-price__name-offer">Professional</p>
+              <p class="c-price__number h-blue-font">$25</p>
               <p class="c-price__second-text">Limited offer</p>
             </div>
             <div class="">
               <ul class="c-price__item-list">
-                <li class="c-price__item">500 MB HDD</li>
-                <li class="c-price__item">2 Subdomains</li>
-                <li class="c-price__item">5 E-mails</li>
-                <li class="c-price__item">One year license</li>
-                <li class="c-price__item">Full support</li>
+                <li class="price__item"><i class="far fa-check-square"></i>500 MB HDD</li>
+                <li class="price__item"><i class="far fa-check-square"></i>2 Subdomains</li>
+                <li class="price__item"><i class="far fa-check-square"></i>5 E-mails</li>
+                <li class="price__item"><i class="far fa-check-square"></i>One year license</li>
+                <li class="price__item"><div class="price__icon"></div>Full support</li>
               </ul>
-            </div>
             <button class="c-price__btn c-price__btn--professional">Begin</button>
+            </div>
           </div>
 
           <div class="c-price__box c-price__box--premium">
-            <div class="">
-              <p class="c-price__basic-text">Premium</p>
-              <p class="c-price__number">$60</p>
+            <div class="c-price__box__offer">
+              <p class="c-price__name-offer">Premium</p>
+              <p class="c-price__number h-green-font">$60</p>
+              <p class="c-price__second-text">Limited offer</p>
             </div>
             <div class="">
               <ul class="c-price__item-list">
-                <li class="c-price__item">2 GB HDD</li>
-                <li class="c-price__item">5 Subdomain</li>
-                <li class="c-price__item">20 E-mails</li>
-                <li class="c-price__item">Two years license</li>
-                <li class="c-price__item">Full support</li>
+                <li class="price__item"><i class="far fa-check-square"></i>2 GB HDD</li>
+                <li class="price__item"><i class="far fa-check-square"></i>5 Subdomain</li>
+                <li class="price__item"><i class="far fa-check-square"></i>20 E-mails</li>
+                <li class="price__item"><i class="far fa-check-square"></i>Two years license</li>
+                <li class="price__item"><i class="far fa-check-square"></i>Full support</li>
               </ul>
             </div>
             <button class="c-price__btn c-price__btn--premium">Begin</button>
@@ -232,22 +236,60 @@
 
 
 
-
-
-
-    <section id="contact" class="h-section--size">contact</section>
-    <footer class="footer h-section--size">
-      <div class="footer_container h-container">
-        <div class="footer_box1">
-          <a href="#" class="c-logo footer_logo_size"> BestSchop </a>
-          <p class="copyright">© 2019 BestShop LTD, All Rights Reserved</p>
+    <section id="contact" class="l-section-contact h-section--size h-element--center">
+      <div class="c-container__contact h-container">
+        <div class="c-contact__box">
+          <h3 class="c-contact__main-text">
+            Any questions?
+          </h3>
+          <p class="c-contact__second-text">Leave your email address or call us!</p>
+          <div class="c-contact__details__box">
+            <div class="c-contact__details">
+              <div class="c-icon-email"></div>
+              <p class="c-contact__email-text">info@bestshop.xyz</p>
+            </div>
+            <div class="c-contact__details">
+              <div class="c-icon-phone"></div>
+              <p class="c-contact__email-number">123 456 789</p>
+            </div>
+          </div>
         </div>
-        <div class="footer_box2">
-          <a href="https://www.facebook.com" class="footer_facebook_link">
-            <div class="footer_icon_facebook"></div>
+        <div class="c-contact__form__box">
+          <form class="c-contact__form">
+            <label class="c-form__text__box h-blue-font">Name
+              <input class="c-form__name" type="text" id="name">
+            </label>
+            <label class="c-form__text__box h-blue-font">
+              E-mail
+              <input class="c-form__email" type="email" id="email">
+            </label>
+            <label class="c-form__checkbox">
+              <input type="checkbox" checked/>
+              <p class="c-contact__text">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
+            </label>
+            <button class="c-btn c-btn--send">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <footer class="c-section__footer h-section--size h-element--center">
+      <div class="c-footer__container h_container h-container">
+        <div class="c-footer__box">
+          <a href="#" class="c-logo h-logo--size"> BestSchop </a>
+          <p class="c-footer__copyright">© 2019 BestShop LTD, All Rights Reserved</p>
+        </div>
+        <div class="c-footer__social-media_box">
+          <a href="https://www.facebook.com" class="c-footer__facebook__link">
+            <div class="c-footer__icon__facebook"></div>
           </a>
-          <a href="https://www.twitter.com" classs="footer_twitter_link">
-            <div class="footer_icon_twitter"></div>
+          <a href="https://www.twitter.com" classs="c-footer__twitter__link">
+            <div class="c-footer__icon__twitter"></div>
           </a>
         </div>
       </div>
