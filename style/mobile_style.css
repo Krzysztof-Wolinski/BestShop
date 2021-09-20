@@ -96,22 +96,24 @@ c- prefix separate class component,
     padding: 0 auto;
     align-items: center;
     box-shadow: 5px 10px 14px #00000029;
+    z-index: 2;
 }
 .c-navigation__list {
-    /* display: none;  poprawić działanie w JS*/
     list-style-type: none;
     position: absolute;
-    top: 10vh;
+    top: 9vh;
     left: 0;
     background-color: var(--color-background);
     width: 100%;
-    max-height: 200px;
-    padding: 2rem 0;
+    max-height: 300px;
+    padding: 1rem 0;
     box-shadow: 5px 10px 14px #00000029;
+    z-index: 1;
 }
 
 .c-navigation__item {
     padding: 1rem 3rem;
+    height: 100%;
 }
 .c-navigation__link {
     text-decoration: none;
@@ -140,7 +142,7 @@ c- prefix separate class component,
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 40vh;
 }
 
@@ -149,10 +151,11 @@ c- prefix separate class component,
     font-family: var(--font-raleway);
     font-weight: 300;
     color: var(--primary-font-color);
+    padding-bottom: 2rem;
 }
 .c-container-welcome__second-text {
     font-family: var(--open-sans);
-    padding: 1.5rem;
+    padding: 2rem;
     font-size: 1rem;
     text-align: center;
 }
@@ -171,7 +174,8 @@ c- prefix separate class component,
     font-family: var(--open-sans);
     font-size: 0.8rem;
     font-weight: bold;
-    box-shadow: 5px 10px 14px #07ACE629
+    box-shadow: 5px 10px 14px #07ACE629;
+    margin-top: 2.5rem;
 }
 
 .c-container-welcome__image-box {
@@ -299,14 +303,16 @@ c- prefix separate class component,
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    padding: 10%;
+    padding: 10% 5%;
+    padding-block: 50px;
 }
 
 .c-benefits__box {
     background-color: var(--color-background);
-    margin: 10px auto;
+    margin: 20px auto;
     width: 100%;
-    /* padding: 1rem; */
+    max-height: 600px;
+
 }
 
 
@@ -545,7 +551,7 @@ c- prefix separate class component,
     justify-content: center;
     align-content: space-around;
     /* align-items: center; */
-    padding: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
 }
 
 .c-contact__box {
@@ -689,7 +695,7 @@ c- prefix separate class component,
 
 
 .c-form__checkbox{
-    display: inline-block;
+    display: flex;
 }
 
 
@@ -701,8 +707,11 @@ input[type="checkbox"] {
     background-color: var(--color-background);
     width: 1.5rem;
     height: 1.5rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
     border-radius: 4px;
     border: 2px solid var(--mediumlight-grey);
+    margin-right: 1rem;
     cursor: pointer;
     outline: none;
     position: relative;
@@ -735,13 +744,12 @@ input[type="checkbox"]:checked:after {
     display: block;
 }
 
-
 .c-contact__text {
     font-size: 0.75rem;
     color: var(--dark-grey);
     font-family: var(--open-sans);
     padding-bottom: 1rem;
-    /* display: inline-block; */
+    width: 85%;
 }
 
 
@@ -751,12 +759,26 @@ input[type="checkbox"]:checked:after {
 
  
 /* contact button send */
-/* .c-btn--send {
+.c-btn__send {
+    cursor: pointer;
+    border-radius: calc(10rem/2);
+    line-height: 3rem;
+    text-align: center;
+    background-color: var(--blue-background);
+    text-decoration: none;
+    background-color: var(--blue-background);
+    color: var(--color-background);
+    font-family: var(--open-sans);
+    font-size: 0.8rem;
+    font-weight: bold;
     border: none;
     box-shadow: 5px 10px 14px #07ACE629;
     width: 14rem;
     height: 3.5rem;
-} */
+    align-items: right;
+    margin-left:auto;
+    margin-right: 2rem;
+}
 
 .c-footer__container {
     display: flex;
@@ -776,6 +798,7 @@ input[type="checkbox"]:checked:after {
 .h-logo--size {
     font-size: 1.5rem;
 }
+
 .c-footer__copyright {
     color: var(--ligth-grey);
     font-size: 0.7rem;

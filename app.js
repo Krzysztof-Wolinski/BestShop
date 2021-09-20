@@ -2,6 +2,7 @@ const burger = document.querySelector('.c-navigation__burger')
 const navigationList = document.querySelector('.c-navigation__list');
 const navigationLinks = document.querySelectorAll('.c-navigation__item')
 console.log(navigationList);
+navigationList.classList.add("h-hide");
 
 const slideNavigation = () => {
     burger.addEventListener('click', () => {
