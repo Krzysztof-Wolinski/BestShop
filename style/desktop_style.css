@@ -56,15 +56,24 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        transition: all .5s
 
     }
 
+    .c-price__box--basic:hover {
+        transform: scale(105%);
+        transition: all .6s;
+    }
 
-    .c-price__box:hover {
+    .c-price__box--professional:hover {
         transform: scale(115%);
         transition: all .6s;
     }
 
+    .c-price__box--premium:hover {
+        transform: scale(105%);
+        transition: all .6s;
+    }
 
 
 /* 

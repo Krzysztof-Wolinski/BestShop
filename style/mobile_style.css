@@ -11,6 +11,7 @@ html {
     --color-background: #ffffff;
     --green-background: #55DFB4;
     --blue-background: #08A6E4;
+    --blue-button: #00587a;
     --red-background: #FB3B64;
     --dark-grey: #707070;
     --mediumlight-grey: #95989A;
@@ -160,23 +161,70 @@ c- prefix separate class component,
     text-align: center;
 }
 
+
+
+
 .c-btn {
+    display: inline-block;
     cursor: pointer;
     border-radius: calc(10rem/2);
     width: 15rem;
     height: 3rem;
     line-height: 3rem;
     text-align: center;
-    background-color: var(--blue-background);
     text-decoration: none;
-    background-color: var(--blue-background);
     color: var(--color-background);
     font-family: var(--open-sans);
     font-size: 0.8rem;
     font-weight: bold;
     box-shadow: 5px 10px 14px #07ACE629;
-    margin-top: 2.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
+
+
+.c-btn:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: var(--blue-background);
+    border-radius: calc(10rem/2);
+    z-index: -2;
+}
+
+.c-btn:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--blue-button);
+    width: 0%;
+    height: 100%;
+    transition: all .3s;
+    border-radius: calc(10rem/2);
+    z-index: -1;
+}
+
+.c-btn:hover {
+    background-color: var(--blue-background);
+}
+
+.c-btn:hover:before {
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
 
 .c-container-welcome__image-box {
     background-image: url(../assets/Background.png);
@@ -718,10 +766,10 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-    background-color: var(--ligth-grey);
+    background-color: var(--very-light-grey);
 }
 
-input[type="checkbox"]::after {
+input[type="checkbox"]::after{
     font-family: "Font Awesome 5 Free";
     content: "\f00c";
     font-weight: 700;
@@ -764,9 +812,7 @@ input[type="checkbox"]:checked:after {
     border-radius: calc(10rem/2);
     line-height: 3rem;
     text-align: center;
-    background-color: var(--blue-background);
     text-decoration: none;
-    background-color: var(--blue-background);
     color: var(--color-background);
     font-family: var(--open-sans);
     font-size: 0.8rem;
@@ -778,7 +824,73 @@ input[type="checkbox"]:checked:after {
     align-items: right;
     margin-left:auto;
     margin-right: 2rem;
+    transition: all .5s;
+    position: relative;
+    z-index: 1;
+    transition: all .6;
+    overflow: hidden;
 }
+
+.c-btn__send:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-background);
+    border-radius: calc(10rem/2);
+    z-index: -2;
+}
+
+.c-btn__send:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:0%;
+    height: 100%;
+    background-color: var(--blue-button);
+    border-radius: calc(10rem/2);
+    transition: all .6s;
+    z-index: -1;
+}
+
+.c-btn__send:hover {
+    color: var(--color-background);
+}
+
+.c-btn__send:hover:after {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .c-footer__container {
     display: flex;
