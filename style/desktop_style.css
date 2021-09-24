@@ -45,6 +45,13 @@
         transform: scale(150%);
     }
 
+    .c-benefits__box {
+        justify-items: reverse;
+    }
+    .c-benefits__image__box__third {
+        background-color: var(--very-light-grey);
+        margin-left: 3rem;
+    }
 
 
 
