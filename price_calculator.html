@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" >
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <!-- <link href="./style/basic_style.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="./style/mobile_style.css"/>
+    <link rel="stylesheet" href="./style/tablet_style.css"/>
+    <link rel="stylesheet" href="./style/desktop_style.css"/>
+
+</head>
+<body>
+    <section id class="l-section__calculator h-section--size h-element--center">
+        <div class="c-calculator__container h-container">
+            <h2 class="c-calculator__main-text">
+                Calculate how much you’ll pay
+            </h2>
+            <div class="c-calculator__box">
+                <form class="c-calculator__form">
+                    <input class="c-form__text__quantity" type="text" value="" placeholder="Products quantity">
+                    <input class="c-form__text__orders" type="text" value="" placeholder="Estimated orders in month">
+                    <select type="" placeholder="Choose package">
+                        <option value="basic">
+                            Basic
+                        </option>
+                        <option value="basic">
+                            Professional
+                        </option>
+                        <option value="basic">
+                            Premium
+                        </option>
+                    </select>
+                    <label for="">
+                        Accounting
+                        <input type="checkbox" checked>
+                    </label>
+                    <label for="">
+                        Rental of a payment terminal
+                        <input type="checkbox" checked>
+                    </label>
+                </form>
+                <div class="c-summary__box">
+                    <div class="c-summary__products__box h-summary__box-style">
+                        <p class="c-products">Products</p>
+                        <p class="c-products__calculate">20 * $0.5</p>
+                        <p class="c-products__price">$10</p>
+                    </div>
+                    <div class="c-summary__orders__box h-summary__box-style">
+                        <p class="c-orders">Order</p>
+                        <p class="c-orders__calculate">30 * $0.25</p>
+                        <p class="c-orders__price">$10</p>
+                    </div>
+                    <div class="c-summary__package__box h-summary__box-style">
+                        <p class="c-package__products">Package</p>
+                        <p class="c-package__calculate">Premium</p>
+                        <p class="c-package__price">$10</p>
+                    </div>
+                    <div class="c-summary__accounting__box h-summary__box-style">
+                        <p class="c-accounting__products">Accounting</p>
+                        <p class="c-accounting__calculate">calculate</p>
+                        <p class="c-accounting__price">$10</p>
+                    </div>
+                    <div class="c-summary__terminal__box h-summary__box-style">
+                        <p class="c-terminal__products">Terminal</p>
+                        <p class="c-terminal__calculate">calculate</p>
+                        <p class="c-terminal__price">$10</p>
+                    </div>
+                    <div class="c-summary__total-style">
+                        <p class="c-total__text ">Total</p>
+                        <p class="c-total__text">$115.75</p>
+                    </div>
+                </div>
+                <a class="c-btn__back" href="./index.html">back</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
