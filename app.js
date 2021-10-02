@@ -27,25 +27,69 @@
 
 // slideNavigation();
 
-const quantityProducts = document.querySelector(".c-form__text__quantity");
-const productsPrice = document.querySelector(".c-products__price");
+const productsBox = document.querySelector(".c-summary__products__box");
 
-console.log(quantityProducts);
+const totalPriceCalculator = () => {};
 
-const productsCalculate = document.querySelector(".c-products__calculate");
+const productsPriceCalculator = () => {
+  const quantityProducts = document.querySelector(".c-form__text__quantity");
+  const productsCalculate = document.querySelector(".c-products__calculate");
+  const productsPrice = document.querySelector(".c-products__price");
+  productsBox.style.display = "none";
+  console.log(quantityProducts.value);
+
+  /*
 
 
-const totalPriceCalculator = () => {
 
-}
-quantityProducts.addEventListener("keyup", () => {
-  console.log(isNaN(quantityProducts.value));
 
-  console.log(typeof quantityProducts.value);
-  if (isNaN(quantityProducts.value)) {
-    quantityProducts.style.border = "1px solid red";
-  } else {
-    productsCalculate.innerHTML = `${quantityProducts.value} *  $${0.5}`;
+
+
+
+
+
+
+  
+*/
+  quantityProducts.addEventListener("change", () => {
+    console.log(typeof parseInt(quantityProducts.value));
+    if (typeof quantityProducts.value != "string") {
+      productsBox.style.display = "flex";
+    }
+    // productsBox.style.display = "flex";
+    productsCalculate.innerHTML = `${quantityProducts.value} * $${0.5}`;
     productsPrice.innerHTML = quantityProducts.value * 0.5;
-  }
-});
+  });
+  return productsPrice;
+};
+
+console.log(productsPriceCalculator());
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+const ordersPriceCalculator = () => {
+  const ordersProducts = document.querySelector(".c-form__text__orders");
+  const ordersCalculator = document.querySelector(".c-orders__calculate");
+  const ordersPrice = document.querySelector(".c-orders__price");
+  ordersProducts.addEventListener("keyup", () => {
+    ordersCalculator.innerHTML = `${ordersProducts.value} * $${0.25}`;
+    ordersPrice.innerHTML = `$${ordersProducts.value * 0.25}`;
+  });
+};
+
+ordersPriceCalculator();

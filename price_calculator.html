@@ -32,20 +32,21 @@
           <form class="c-calculator__form">
             <input
               class="c-form__text__quantity"
-              type="text"
-              value=""
+              type="number"
+
               placeholder="Products quantity"
             />
             <input
               class="c-form__text__orders"
-              type="text"
+              type="number"
               value=""
               placeholder="Estimated orders in month"
             />
-            <select type="" placeholder="Choose package">
-              <option value="basic">Basic</option>
-              <option value="basic">Professional</option>
-              <option value="basic">Premium</option>
+            <select name="package"">
+              <option value="">Choose package</option>
+              <option value="Basic">Basic</option>
+              <option value="Professional">Professional</option>
+              <option value="Premium">Premium</option>
             </select>
             <label for="">
               Accounting
@@ -59,25 +60,25 @@
           <div class="c-summary__box">
             <div class="c-summary__products__box h-summary__box-style">
               <p class="c-products">Products</p>
-              <p class="c-products__calculate">20 * $0.5</p>
+              <p class="c-products__calculate">* $0.5</p>
               <p class="c-products__price">$10</p>
             </div>
-            <div class="c-summary__orders__box h-summary__box-style">
+            <div class="c-summary__orders__box h-summary__box-style h-hide">
               <p class="c-orders">Order</p>
-              <p class="c-orders__calculate">30 * $0.25</p>
+              <p class="c-orders__calculate">* $0.25</p>
               <p class="c-orders__price">$10</p>
             </div>
-            <div class="c-summary__package__box h-summary__box-style">
+            <div class="c-summary__package__box h-summary__box-style h-hide">
               <p class="c-package__products">Package</p>
               <p class="c-package__calculate">Premium</p>
               <p class="c-package__price">$10</p>
             </div>
-            <div class="c-summary__accounting__box h-summary__box-style">
+            <div class="c-summary__accounting__box h-summary__box-style h-hide">
               <p class="c-accounting__products">Accounting</p>
               <p class="c-accounting__calculate">calculate</p>
               <p class="c-accounting__price">$10</p>
             </div>
-            <div class="c-summary__terminal__box h-summary__box-style">
+            <div class="c-summary__terminal__box h-summary__box-style h-hide">
               <p class="c-terminal__products">Terminal</p>
               <p class="c-terminal__calculate">calculate</p>
               <p class="c-terminal__price">$10</p>
