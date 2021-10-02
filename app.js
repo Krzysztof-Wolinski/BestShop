@@ -30,10 +30,14 @@
 const quantityProducts = document.querySelector(".c-form__text__quantity");
 const productsPrice = document.querySelector(".c-products__price");
 
-console.log(quantityProducts.value);
+console.log(quantityProducts);
 
 const productsCalculate = document.querySelector(".c-products__calculate");
 
+
+const totalPriceCalculator = () => {
+
+}
 quantityProducts.addEventListener("keyup", () => {
   console.log(isNaN(quantityProducts.value));
 

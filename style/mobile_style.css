@@ -1118,6 +1118,3 @@ select {
   box-shadow: 0px 3px 6px #00000029;
 }
 
-.c-form__text__quantity:focus {
-  background-color: red;
-}
