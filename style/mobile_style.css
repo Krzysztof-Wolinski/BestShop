@@ -1031,6 +1031,7 @@ input[type="checkbox"]:checked:after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--very-light-grey);
 }
 
 .c-calculator__main-text {
@@ -1056,8 +1057,8 @@ input[type="checkbox"]:checked:after {
   padding: 1rem;
 }
 
-.c-form__text__quantity,
-.c-form__text__orders {
+.c-form__numbers__quantity,
+.c-form__numbers__orders {
   width: 100%;
   height: 2rem;
   margin-bottom: 1rem;
@@ -1066,8 +1067,8 @@ input[type="checkbox"]:checked:after {
   border: 1px solid var(--blue-background);
   box-shadow: 0px 3px 6px #08a6e429;
 }
-.c-form__text__quantity::placeholder,
-.c-form__text__orders::placeholder {
+.c-form__numbers__quantity::placeholder,
+.c-form__numbers__orders::placeholder {
   color: var(--ligth-grey);
 }
 input::placeholder {
@@ -1096,7 +1097,7 @@ select {
   background-color: #55dfb4;
   height: 2rem;
   margin-bottom: 1rem;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
@@ -1117,4 +1118,12 @@ select {
   border-radius: calc(1rem / 3);
   color: var(--color-background);
   box-shadow: 0px 3px 6px #00000029;
+}
+
+
+
+.h-error__products-text {
+  color: red;
+  padding-bottom: 1rem;
+  display: none;
 }
