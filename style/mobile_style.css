@@ -1097,13 +1097,13 @@ select {
   background-color: #55dfb4;
   height: 2rem;
   margin-bottom: 1rem;
-  /* display: flex; */
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
   border-radius: calc(1rem / 3);
   color: var(--color-background);
   box-shadow: 0px 3px 6px #00000029;
+  transition: all 0.3s;
 }
 
 .c-summary__total-style {
@@ -1119,8 +1119,6 @@ select {
   color: var(--color-background);
   box-shadow: 0px 3px 6px #00000029;
 }
-
-
 
 .h-error__products-text {
   color: red;
