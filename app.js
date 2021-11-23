@@ -1,32 +1,30 @@
-// const burger = document.querySelector(".c-navigation__burger");
-// const navigationList = document.querySelector(".c-navigation__list");
-// const navigationLinks = document.querySelectorAll(".c-navigation__item");
-// console.log(navigationList);
-// navigationList.classList.add("h-hide");
+const burger = document.querySelector(".c-navigation__burger");
+const navigationList = document.querySelector(".c-navigation__list");
+const navigationLinks = document.querySelectorAll(".c-navigation__item");
+navigationList.classList.add("h-hide");
 
-// const slideNavigation = () => {
-//   burger.addEventListener("click", () => {
-//     navigationList.classList.toggle("h-hide");
-//     console.log("kiknąłeś mnie");
-//   });
-// };
+const slideNavigation = () => {
+  burger.addEventListener("click", () => {
+    navigationList.classList.toggle("h-hide");
+    burger.classList.toggle("toggle");
+  });
+};
 
-// slideNavigation();
-// const slideNavigation = () => {
-//     burger.addEventListener('click', ()=> {
-//         navigationList.classList.toggle("navigations-active");
-//         navigationLinks.forEach((link, index) => {
-//             if (link.style.animation) {
-//                 link.style.animation = "";
-//             }
-//             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`;
-//         });
-//         burger.classList.toggle('toggle');
-//     })
-// }
+slideNavigation();
 
-// slideNavigation();
+const calculatorSection = document.querySelector(".l-section__calculator");
+const buttonHideCalculator = document.querySelector(".c-btn__back");
+buttonHideCalculator.addEventListener("click", () => {
+  calculatorSection.classList.toggle("h-hide");
+});
 
+const buttonsPrice = document.querySelectorAll(".l-section-price a");
+
+buttonsPrice.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    calculatorSection.classList.toggle("h-hide");
+  });
+});
 const productsBox = document.querySelector(".c-summary__products__box");
 const productsCalculate = document.querySelector(".c-products__calculate");
 const quantityProducts = document.querySelector(".c-form__numbers__quantity");
@@ -54,130 +52,135 @@ const terminalPrice = document.querySelector(".c-terminal__price");
 
 const totalPrice = document.querySelector(".c-total__price");
 
-class TotalPriceCalculator {
-  constructor(
-    quantityProducts,
-    quantityOrders,
-    choosePackageInput,
-    inputAccounting,
-    inputRental
-  ) {
-    this.quantityProducts = quantityProducts;
-    this.quantityOrders = quantityOrders;
-    this.choosePackageInput = choosePackageInput;
-    this.inputAccounting = inputAccounting;
-    this.inputRental = inputRental;
+const totalPriceObject = {
+  productsSummaryPrice: 0,
+  ordersSummaryPrice: 0,
+  packageSummaryPrice: 0,
+  accountingSummaryPrice: 0,
+  terminalSummaryPrice: 0,
+};
+quantityProducts.addEventListener("change", (e) => {
+  if (e.target.value < 0 || e.target.value % 1 != 0) {
+    e.target.nextElementSibling.style.display = "block";
+    showQuantityProducts(e.target);
+  } else {
+    e.target.nextElementSibling.style.display = "none";
+    showQuantityProducts(e.target);
   }
+});
 
-  show() {
-    console.log(this.quantityProducts.value);
+quantityOrders.addEventListener("change", (e) => {
+  if (e.target.value < 0 || e.target.value % 1 != 0) {
+    e.target.nextElementSibling.style.display = "block";
+    showQuantityOrders(e.target);
+  } else {
+    e.target.nextElementSibling.style.display = "none";
+    showQuantityOrders(e.target);
   }
-}
+});
+const showQuantityProducts = (products) => {
+  let productsValue = parseFloat(products.value);
+  if (productsValue <= 0 || productsValue % 1 != 0) {
+    productsBox.style.display = "none";
+    totalPriceObject.productsSummaryPrice = productsValue;
+  } else {
+    productsBox.style.display = "flex";
+    productsCalculate.innerHTML = `${productsValue} * $0.5`;
+    let productsSummaryPrice = productsValue * 0.5;
+    productsPrice.innerHTML = `$${productsSummaryPrice}`;
+    totalPriceObject.productsSummaryPrice = productsSummaryPrice;
+  }
+  totalPriceCalculator();
+};
 
-const calculate = new TotalPriceCalculator(quantityProducts, quantityOrders);
-// quantityProducts.addEventListener("change", (e) => {
-//   if (e.target.value < 0 || e.target.value % 1 != 0) {
-//     e.target.nextElementSibling.style.display = "block";
-//   } else {
-//     e.target.nextElementSibling.style.display = "none";
-//     showQuantityProducts(e.target);
-//   }
-// });
+const showQuantityOrders = (orders) => {
+  let ordersValue = parseFloat(orders.value);
+  if (ordersValue <= 0 || ordersValue % 1 != 0) {
+    ordersBox.style.display = "none";
+    totalPriceObject.ordersSummaryPrice = ordersValue;
+  } else {
+    ordersBox.style.display = "flex";
+    ordersCalculate.innerHTML = `${ordersValue} * $0.5`;
+    let ordersSummaryPrice = ordersValue * 0.25;
+    ordersPrice.innerHTML = `$${ordersSummaryPrice}`;
+    totalPriceObject.ordersSummaryPrice = ordersSummaryPrice;
+  }
+  totalPriceCalculator();
+};
 
-// showQuantityProducts = (products) => {
-//   let productsValue = products.value;
-//   if (productsValue <= 0 || productsValue % 1 != 0) {
-//     productsBox.style.display = "none";
-//   } else {
-//     productsBox.style.display = "flex";
-//     productsCalculate.innerHTML = `${productsValue} * $0.5`;
-//     let productsSummaryPrice = productsValue * 0.5;
-//     productsPrice.innerHTML = `$${productsSummaryPrice}`;
-//     // return (order.productsSummaryPrice = productsSummaryPrice);
-//   }
-// };
-// // order.prototype.producstsValue = "10";
-// const showQuantityOrders = (orders) => {
-//   let ordersValue = orders.value;
-//   if (ordersValue <= 0 || ordersValue % 1 != 0) {
-//     ordersBox.style.display = "none";
-//   } else {
-//     ordersBox.style.display = "flex";
-//     ordersCalculate.innerHTML = `${ordersValue} * $0.5`;
-//     let ordersSummaryPrice = ordersValue * 0.25;
-//     ordersPrice.innerHTML = `$${ordersSummaryPrice}`;
-//     // return (order.ordersSummaryPrice = ordersSummaryPrice);
-//   }
-// };
+choosePackageInput.addEventListener("change", (e) => {
+  if (e.target.value.lengt != "") {
+    showPackage(e.target);
+  }
+});
+const showPackage = (package) => {
+  let packageValue = package.value;
+  let packageSummaryPrice = 0;
+  if (package.value.length == "") {
+    packageBox.style.display = "none";
+    totalPriceObject.packageSummaryPrice = 0;
+  } else {
+    packageBox.style.display = "flex";
+    packageCalculate.innerHTML = packageValue;
+  }
+  if (package.value == "Basic") {
+    packageSummaryPrice = 10;
+    packagePrice.innerHTML = `$${packageSummaryPrice}`;
+    totalPriceObject.packageSummaryPrice = packageSummaryPrice;
+  }
+  if (package.value == "Professional") {
+    packageSummaryPrice = 20;
+    packagePrice.innerHTML = `$${packageSummaryPrice}`;
+    totalPriceObject.packageSummaryPrice = packageSummaryPrice;
+  }
+  if (package.value == "Premium") {
+    packageSummaryPrice = 30;
+    packagePrice.innerHTML = `$${packageSummaryPrice}`;
+    totalPriceObject.packageSummaryPrice = packageSummaryPrice;
+  }
+  totalPriceCalculator();
+};
 
-// quantityOrders.addEventListener("change", (e) => {
-//   if (e.target.value < 0 || e.target.value % 1 != 0) {
-//     e.target.nextElementSibling.style.display = "block";
-//   } else {
-//     e.target.nextElementSibling.style.display = "none";
-//     showQuantityOrders(e.target);
-//   }
-// });
+inputAccounting.addEventListener("change", (e) => {
+  let accountingSummaryPrice = 0;
+  if (e.target.checked) {
+    accountingBox.style.display = "flex";
+    accountingSummaryPrice = 20;
+    accountingPrice.innerHTML = `$${accountingSummaryPrice}`;
+  } else {
+    accountingBox.style.display = "none";
+  }
+  totalPriceObject.accountingSummaryPrice = accountingSummaryPrice;
+  totalPriceCalculator();
+});
 
-// const showPackage = (package) => {
-//   console.log(package.value);
-//   let packageValue = package.value;
-//   let packageSummaryPrice = 0;
-//   if (package.value.length == "") {
-//     packageBox.style.display = "none";
-//   } else {
-//     packageBox.style.display = "flex";
-//     packageCalculate.innerHTML = packageValue;
-//   }
-//   if (package.value == "Basic") {
-//     packageSummaryPrice = 10;
-//     packagePrice.innerHTML = `$${packageSummaryPrice}`;
-//   }
-//   if (package.value == "Professional") {
-//     packageSummaryPrice = 20;
-//     packagePrice.innerHTML = `$${packageSummaryPrice}`;
-//   }
-//   if (package.value == "Premium") {
-//     packageSummaryPrice = 30;
-//     packagePrice.innerHTML = `$${packageSummaryPrice}`;
-//   }
-//   // return (order.packageSummaryPrice = packageSummaryPrice);
-// };
+inputRental.addEventListener("change", (e) => {
+  let terminalSummaryPrice = 0;
+  if (e.target.checked) {
+    terminalBox.style.display = "flex";
+    terminalSummaryPrice = 20;
+    terminalPrice.innerHTML = `$${terminalSummaryPrice}`;
+  } else {
+    terminalBox.style.display = "none";
+  }
+  totalPriceObject.terminalSummaryPrice = terminalSummaryPrice;
+  totalPriceCalculator();
+});
 
-// choosePackageInput.addEventListener("change", (e) => {
-//   if (e.target.value.lengt != "") {
-//     showPackage(e.target);
-//   }
-// });
+const totalPriceCalculator = () => {
+  let totalSummary = 0;
+  totalSummary =
+    totalPriceObject.productsSummaryPrice +
+    totalPriceObject.ordersSummaryPrice +
+    totalPriceObject.packageSummaryPrice +
+    totalPriceObject.accountingSummaryPrice +
+    totalPriceObject.terminalSummaryPrice;
+  totalPrice.innerHTML = totalSummary;
+  return totalSummary;
+};
+totalPriceCalculator();
 
-// inputAccounting.addEventListener("change", (e) => {
-//   let accountingSummaryPrice = 0;
-//   if (e.target.checked) {
-//     accountingBox.style.display = "flex";
-//     accountingSummaryPrice = 20;
-//     accountingPrice.innerHTML = `$${accountingSummaryPrice}`;
-//   } else {
-//     accountingBox.style.display = "none";
-//   }
-//   // return (order.accountingSummaryPrice = accountingSummaryPrice);
-// });
-
-// inputRental.addEventListener("change", (e) => {
-//   let terminalSummaryPrice = 0;
-//   if (e.target.checked) {
-//     terminalBox.style.display = "flex";
-//     terminalSummaryPrice = 20;
-//     terminalPrice.innerHTML = `$${terminalSummaryPrice}`;
-//   } else {
-//     terminalBox.style.display = "none";
-//   }
-//   // return (order.terminalSummaryPrice = terminalSummaryPrice);
-// });
-
-// console.log(order);
-
-// const totalPriceCalculator = () => {
-//   console.log(quantityProducts.value);
-//   return quantityProducts.value;
-// };
-// console.log(totalPriceCalculator());
+const buttonSubmit = document.querySelector(".c-btn__send");
+buttonSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+});

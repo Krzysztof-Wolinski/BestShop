@@ -8,21 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+      crossorigin="anonymous"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/all.min.css" />
     <link rel="stylesheet" href="./css/fontawesome.min.css" />
-    <!-- <link href="./style/basic_style.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./style/mobile_style.css" />
-    <link rel="stylesheet" href="./style/tablet_style.css" />
-    <link rel="stylesheet" href="./style/desktop_style.css" />
   </head>
   <body>
     <header class="l-section-header h-section--size h-element--center">
@@ -57,7 +49,7 @@
           <p class="c-container-welcome__second-text">
             Open shop on our platform and increase your sales
           </p>
-          <a class="c-btn" href="./price_calculator.html">Open your shop</a>
+          <a class="c-btn" href="#prices">Open your shop</a>
         </div>
         <div class="c-container-welcome__image-box"></div>
       </div>
@@ -105,12 +97,6 @@
         <div class="c-benefits__box">
           <div class="c-benefits__image__box c-benefits__image__box--first">
             <div class="c-benefits__image c-benefits__image__first"></div>
-            <div
-              class="
-                c-benefits__special__background
-                c-benefits__special__background__first
-              "
-            ></div>
           </div>
           <article class="c-benefits__article c-benefits__article__first">
             <h3 class="c-benefits__main-text">Be always first</h3>
@@ -190,9 +176,12 @@
                   Full support
                 </li>
               </ul>
-              <button class="c-price__btn__basic c-price__btn--basic">
+              <a
+                href="#calculator"
+                class="c-price__btn__basic c-price__btn--basic"
+              >
                 Begin
-              </button>
+              </a>
             </div>
           </div>
 
@@ -221,11 +210,12 @@
                   Full support
                 </li>
               </ul>
-              <button
+              <a
+                href="#calculator"
                 class="c-price__btn__professional c-price__btn--professional"
               >
                 Begin
-              </button>
+              </a>
             </div>
           </div>
 
@@ -254,14 +244,91 @@
                 </li>
               </ul>
             </div>
-            <button class="c-price__btn__premium c-price__btn--premium">
+            <a
+              href="#calculator"
+              class="c-price__btn__premium c-price__btn--premium"
+            >
               Begin
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </section>
-
+    <section
+      id="calculator"
+      class="l-section__calculator h-section--size h-element--center h-hide"
+    >
+      <div class="c-calculator__container h-container">
+        <h2 class="c-calculator__main-text">Calculate how much you’ll pay</h2>
+        <div class="c-calculator__box">
+          <form class="c-calculator__form">
+            <input
+              class="c-form__numbers c-form__numbers__quantity"
+              type="number"
+              min="0"
+              placeholder="Products quantity"
+            />
+            <p class="h-error__products-text">
+              Podaj dodatnią liczbę całkowitą!
+            </p>
+            <input
+              class="c-form__numbers c-form__numbers__orders"
+              type="number"
+              min="0"
+              value=""
+              placeholder="Estimated orders in month"
+            />
+            <p class="h-error__products-text">
+              Podaj dodatnią liczbę całkowitą!
+            </p>
+            <select class="select" name="package">
+              <option value="">Choose package</option>
+              <option class="option" value="Basic">Basic</option>
+              <option class="option" value="Professional">Professional</option>
+              <option class="option" value="Premium">Premium</option>
+            </select>
+            <label for="">
+              <input class="checkbox-accounting" type="checkbox" />
+              Accounting
+            </label>
+            <label for="">
+              <input class="checkbox-rental" type="checkbox" />
+              Rental of a payment terminal
+            </label>
+          </form>
+          <div class="c-summary__box">
+            <div class="c-summary__products__box h-summary__box-style h-hide">
+              <p class="c-products">Products</p>
+              <p class="c-products__calculate">* $0.5</p>
+              <p class="c-products__price"></p>
+            </div>
+            <div class="c-summary__orders__box h-summary__box-style h-hide">
+              <p class="c-orders">Order</p>
+              <p class="c-orders__calculate">* $0.25</p>
+              <p class="c-orders__price"></p>
+            </div>
+            <div class="c-summary__package__box h-summary__box-style h-hide">
+              <p class="c-package__products">Package</p>
+              <p class="c-package__calculate"></p>
+              <p class="c-package__price"></p>
+            </div>
+            <div class="c-summary__accounting__box h-summary__box-style h-hide">
+              <p class="c-accounting__products">Accounting</p>
+              <p class="c-accounting__price"></p>
+            </div>
+            <div class="c-summary__terminal__box h-summary__box-style h-hide">
+              <p class="c-terminal__products">Terminal</p>
+              <p class="c-terminal__price">$10</p>
+            </div>
+            <div class="c-summary__total-style">
+              <p class="c-total__text">Total</p>
+              <p class="c-total__price">0</p>
+            </div>
+            <a class="c-btn__back">Hide</a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section
       id="contact"
       class="l-section-contact h-section--size h-element--center"
@@ -293,9 +360,8 @@
               E-mail
               <input class="c-form__email" type="email" id="email" />
             </label>
-            <!-- <label class="c-form__checkbox"> -->
-            <input type="checkbox" checked />
-            <p class="c-contact__text">
+            <label class="c-form__checkbox, c-contact__text">
+              <input type="checkbox" />
               I hereby give consent for my personal data included in my
               application to be processed for the purposes of the recruitment
               process under the European Parliament’s and Council of the
@@ -303,9 +369,8 @@
               of 27 April 2016, with regard to the processing of personal data
               and on the free movement of such data, and repealing Directive
               95/46/EC (Data Protection Directive)
-            </p>
-            <!-- </label> -->
-            <button class="c-btn__send">Send</button>
+            </label>
+            <button type="submit" class="c-btn__send">Send</button>
           </form>
         </div>
       </div>
@@ -323,7 +388,7 @@
           <a href="https://www.facebook.com" class="c-footer__facebook__link">
             <div class="c-footer__icon__facebook"></div>
           </a>
-          <a href="https://www.twitter.com" classs="c-footer__twitter__link">
+          <a href="https://www.twitter.com" class="c-footer__twitter__link">
             <div class="c-footer__icon__twitter"></div>
           </a>
         </div>

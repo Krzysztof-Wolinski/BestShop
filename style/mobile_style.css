@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
   font-size: 16px;
-  /* background-color: var(--color-background); */
 }
 
 html {
@@ -89,9 +88,22 @@ c- prefix separate class component,
   height: 3px;
   background-color: var(--blue-background);
   margin: 5px;
-  border-radius: 1.5px;
+  transition: 0.5s;
 }
 
+.toggle .c-navigation__burger__line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .c-navigation__burger__line:nth-child(2) {
+  opacity: 0;
+}
+.toggle .c-navigation__burger__line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.navigations-active {
+  transform: translateX(0%);
+}
 /*Navigation style*/
 
 .c-navigation {
@@ -113,6 +125,7 @@ c- prefix separate class component,
   padding: 1rem 0;
   box-shadow: 5px 10px 14px #00000029;
   z-index: 1;
+  transition: 0.5s;
 }
 
 .c-navigation__item {
@@ -232,7 +245,6 @@ c- prefix separate class component,
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  /* height: 100vh; */
 }
 .c-container-why-us__main-text {
   font-size: 2rem;
@@ -338,6 +350,7 @@ c- prefix separate class component,
   align-content: space-around;
   padding: 10% 5%;
   padding-block: 50px;
+  flex-wrap: wrap;
 }
 
 .c-benefits__box {
@@ -373,6 +386,7 @@ c- prefix separate class component,
   font-weight: normal;
   padding-bottom: 2rem;
 }
+
 .c-benefits__image {
   width: 100%;
   height: 20vh;
@@ -380,6 +394,7 @@ c- prefix separate class component,
   position: relative;
 }
 .c-benefits__image__box {
+  width: 400px;
   position: relative;
   padding: 1.5rem;
   width: 100%;
@@ -390,20 +405,8 @@ c- prefix separate class component,
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 2;
-}
-.c-benefits__special__background__first {
-  padding: 2rem;
-  width: 25vw;
-  height: 25vw;
-  border-radius: 2rem;
-  max-width: 100px;
-  max-height: 100px;
-  background-color: var(--red-background);
-  position: absolute;
-  top: 5px;
-  right: 10vw;
-  transform: rotate(45deg);
+  background-size: 300px;
+  position: static;
 }
 
 .c-benefits__image__second {
@@ -415,10 +418,8 @@ c- prefix separate class component,
 }
 
 .c-benefits__special__background__second {
-  width: 25vw;
-  height: 25vw;
-  max-width: 100px;
-  max-height: 100px;
+  width: 180px;
+  height: 180px;
   background-color: var(--blue-background);
   border-radius: 50%;
   position: absolute;
@@ -440,6 +441,7 @@ c- prefix separate class component,
   background-size: contain;
   background-color: var(--green-background);
   min-height: 256px;
+  height: 100%;
 }
 
 /*section price*/
@@ -492,7 +494,11 @@ c- prefix separate class component,
 
 .c-price__btn__basic {
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
   width: 10rem;
   height: 3rem;
   border-radius: 1.5rem;
@@ -543,6 +549,11 @@ c- prefix separate class component,
 .c-price__btn__professional {
   cursor: pointer;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
   width: 10rem;
   height: 3rem;
   border-radius: 1.5rem;
@@ -592,7 +603,11 @@ c- prefix separate class component,
 
 .c-price__btn__premium {
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
   width: 10rem;
   height: 3rem;
   border-radius: 1.5rem;
@@ -642,7 +657,7 @@ c- prefix separate class component,
 
 .c-price__btn--professional {
   background-color: var(--blue-background);
-  border: 1px solid var(--green-background);
+  border: 1px solid var(--blue-background);
   box-shadow: 5px 10px 27px #07ace629;
 }
 .c-price__btn--premium {
@@ -707,23 +722,17 @@ c- prefix separate class component,
 .c-container__contact {
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   justify-content: center;
   align-content: space-around;
-  /* align-items: center; */
   padding: 1rem 1rem 2rem 1rem;
 }
 
 .c-contact__box {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   color: var(--primary-font-color);
-  padding: 1rem;
   min-width: 360px;
   max-width: 440px;
-  /* min-width: 600px; */
-  /* background-color: var(--red-background); */
 }
 
 .c-contact__main-text {
@@ -787,8 +796,6 @@ c- prefix separate class component,
   justify-items: center;
   min-width: 360px;
   max-width: 440px;
-  /* min-width: 600px; */
-  /* background-color: var(--green-background); */
 }
 
 .c-contact__form {
@@ -796,10 +803,13 @@ c- prefix separate class component,
   flex-direction: column;
   align-items: left;
   width: 100%;
-  padding: 1rem;
+  padding-top: 2rem;
+  width: 360px;
 }
 
 .c-form__text__box {
+  display: flex;
+  flex-direction: column;
   font-size: 1rem;
   font-family: var(--open-sans);
   font-weight: bold;
@@ -808,35 +818,23 @@ c- prefix separate class component,
 .c-form__name {
   height: 2.5rem;
   width: 100%;
+  max-width: 360px;
   display: block;
   border: none;
   position: relative;
   border-bottom: 2px solid var(--very-light-grey);
   outline: none;
   margin-bottom: 1rem;
-}
-.c-form__name:hover {
-  /* background-color: lightblue; */
-  /* border-bottom: 3px solid var(--blue-background); */
 }
 
 .c-form__name:focus {
   background-color: rgb(240, 252, 255);
 }
-/* .c-form__name::after {
-    content: "Hellow;";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right:0;
-    background-color: lightblue;
-    border-bottom: 1px solid var(--mediumlight-grey);
-} */
+
 .c-form__email {
   height: 2.5rem;
   width: 100%;
+  max-width: 360px;
   display: block;
   border: none;
   position: relative;
@@ -845,9 +843,6 @@ c- prefix separate class component,
   margin-bottom: 1rem;
 }
 
-.c-form__email:hover {
-  /* background-color: lightblue; */
-}
 .c-form__email:focus {
   background-color: rgb(240, 252, 255);
 }
@@ -856,12 +851,16 @@ c- prefix separate class component,
   display: flex;
 }
 
+label {
+  display: flex;
+}
+
 input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
-  background-color: var(--color-background);
+  background-color: var(--very-light-grey);
   width: 1.5rem;
   height: 1.5rem;
   min-width: 1.5rem;
@@ -876,7 +875,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-  background-color: var(--very-light-grey);
+  background-color: var(--mediumlight-grey);
 }
 
 input[type="checkbox"]::after {
@@ -907,7 +906,7 @@ input[type="checkbox"]:checked:after {
   color: var(--dark-grey);
   font-family: var(--open-sans);
   padding-bottom: 1rem;
-  width: 85%;
+  width: 95%;
 }
 
 /* contact button send */
@@ -927,7 +926,7 @@ input[type="checkbox"]:checked:after {
   height: 3.5rem;
   align-items: right;
   margin-left: auto;
-  margin-right: 2rem;
+  margin-right: 4rem;
   position: relative;
   z-index: 1;
   transition: all 0.6s;
@@ -1014,7 +1013,7 @@ input[type="checkbox"]:checked:after {
   margin: 0.5rem;
 }
 
-/*Price calculator*/
+/*Section price calculator*/
 
 .l-section__calculator {
   width: 100vw;
@@ -1050,7 +1049,6 @@ input[type="checkbox"]:checked:after {
 .c-calculator__form {
   max-width: 500px;
   min-width: 370px;
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -1064,6 +1062,7 @@ input[type="checkbox"]:checked:after {
   margin-bottom: 1rem;
   border-radius: calc(1rem / 3);
   padding: 1rem;
+  background-color: var(--very-light-grey);
   border: 1px solid var(--blue-background);
   box-shadow: 0px 3px 6px #08a6e429;
 }
@@ -1081,13 +1080,13 @@ select {
   margin-bottom: 1rem;
   border-radius: calc(1rem / 3);
   padding-left: 1rem;
+  background-color: var(--very-light-grey);
   border: 1px solid var(--blue-background);
   box-shadow: 0px 3px 6px #08a6e429;
 }
 
 .c-summary__box {
   max-width: 500px;
-  /* width: 100%; */
   min-width: 370px;
   margin: 1rem;
   padding: 1rem;
@@ -1124,4 +1123,147 @@ select {
   color: red;
   padding-bottom: 1rem;
   display: none;
+}
+
+.c-btn__back {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 1.5rem;
+  border: none;
+  position: absolute;
+  font-size: 0.6rem;
+  font-family: var(--open-sans);
+  font-weight: bold;
+  color: var(--color-background);
+  z-index: 1;
+  transition: all 0.6s;
+  overflow: hidden;
+}
+
+.c-btn__back:before {
+  content: "";
+  position: absolute;
+  background-color: var(--green-background);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  z-index: -2;
+}
+
+.c-btn__back:after {
+  background-color: var(--green-button);
+  content: "";
+  position: absolute;
+  border-radius: 1.5rem;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.6s;
+}
+.c-btn__back:hover {
+  color: var(--color-background);
+}
+.c-btn__back:hover:after {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .c-calculator__box {
+    justify-content: center;
+  }
+  .c-contact__form {
+    padding: 0rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .c-benefits__box {
+    display: flex;
+  }
+  .c-contact__box {
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .c-navigation {
+    display: flex;
+    justify-content: space-around;
+  }
+  .c-navigation__burger {
+    display: none;
+  }
+
+  .c-navigation__list {
+    display: flex;
+    justify-content: flex-end;
+    position: static;
+    width: 70%;
+    box-shadow: none;
+    height: 100%;
+    padding: 0;
+  }
+  .c-navigation__item {
+    padding: 0;
+    margin: 0 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .c-navigation__link {
+    display: block;
+    border-bottom: 1px solid var(--color-background);
+  }
+
+  .c-navigation__link:hover {
+    border-bottom: 1px solid var(--primary-font-color);
+  }
+
+  .c-btn {
+    transform: scale(150%);
+  }
+
+  .c-benefits__box {
+    justify-items: reverse;
+  }
+  .c-benefits__image__box__third {
+    background-color: var(--very-light-grey);
+    margin-left: 3rem;
+  }
+
+  .c-price__box {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.5s;
+  }
+
+  .c-price__box--basic:hover {
+    transform: scale(105%);
+    transition: all 0.6s;
+  }
+
+  .c-price__box--professional:hover {
+    transform: scale(115%);
+    transition: all 0.6s;
+  }
+
+  .c-price__box--premium:hover {
+    transform: scale(105%);
+    transition: all 0.6s;
+  }
 }
